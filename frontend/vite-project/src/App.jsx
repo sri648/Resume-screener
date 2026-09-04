@@ -21,13 +21,13 @@ function App() {
     try {
       const formData = new FormData();
       formData.append("file", resumeFile);
-      const uploadRes = await axios.post("http://127.0.0.1:8000/upload-resume", formData);
+      const uploadRes = await axios.post("https://resume-screener-backend-ezy1.onrender.com/upload-resume", formData);
       const resumeText = uploadRes.data.extracted_text;
 
       const matchFormData = new FormData();
       matchFormData.append("resume_text", resumeText);
       matchFormData.append("job_description", jobDescription);
-      const matchRes = await axios.post("http://127.0.0.1:8000/match", matchFormData);
+      const matchRes = await axios.post("https://resume-screener-backend-ezy1.onrender.com/match", matchFormData);
 
       setMatchScore(matchRes.data.match_score);
       setMatchedKeywords(matchRes.data.matched_keywords);
