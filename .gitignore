@@ -1,0 +1,4 @@
+backend/venv/
+frontend/vite-project/node_modules/
+__pycache__/
+*.pyc 
